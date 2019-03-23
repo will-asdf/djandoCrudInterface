@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+    <head>
+        <title>CRUD de items</title>
+        <!-- elementos de Jquery, poppers y bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src='{% static "js/client.js" %}'></script>
+        <!-- elementos de jsgrid -->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="container">
+                <div id="read-update-delete-section" class="py-4">
+                    <h1 class="display-4 py-2">Consulta y edita tus items</h1>
+                    <div id='items_grid' class="py-2"></div>
+                </div>
+                <div id="add_section" class="py-4">
+                    <h1 class="display-4 py-2">Adiciona un item</h1>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Nombre:</p>
+                        </div>
+                        <div class="col-7">
+                            <input id="name_textbox" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Precio:</p>
+                        </div>
+                        <div class="col-7">
+                            <input id="price_textbox" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Cantidad:</p>
+                        </div>
+                        <div class="col-7">
+                            <input id="stock_textbox" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="row justify-content-center">
+                                <button id="save-buttom" value="crear" class="btn btn-success col-4" onclick="app.methods.add_item()" >crear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
